@@ -17,6 +17,7 @@ export default function ProtectedRoute({
       router.push("/login");
     }
   }, [isAuthenticated]);
+  console.log(isAuthenticated);
 
   return <>{isAuthenticated ? children : null}</>;
 }

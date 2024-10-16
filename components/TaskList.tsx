@@ -8,7 +8,7 @@ export default function TaskList() {
   const { tasks } = useContext(TaskContext);
 
   return (
-    <ul className="mt-4 space-y-2">
+    <ul className="mt-4 space-y-2 w-[70%]">
       {tasks.map((task) => (
         <TaskItem key={task.id} task={task} />
       ))}

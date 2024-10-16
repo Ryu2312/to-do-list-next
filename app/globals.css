@@ -23,3 +23,11 @@ body {
     text-wrap: balance;
   }
 }
+
+button {
+  transition: opacity 0.3s ease;
+}
+
+button:hover {
+  opacity: 30%;
+}

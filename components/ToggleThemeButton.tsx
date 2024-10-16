@@ -1,6 +1,7 @@
 "use client";
 
 import { ThemeContext } from "@/context/ThemeContext";
+import { Moon, Sun } from "lucide-react";
 import { useContext } from "react";
 
 export default function ToggleThemeButton() {
@@ -9,9 +10,9 @@ export default function ToggleThemeButton() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 bg-gray-200 dark:bg-gray-800 rounded"
+      className="p-2 bg-blue-950 dark:bg-gray-800 rounded-full"
     >
-      Cambiar a {theme === "light" ? "Oscuro" : "Claro"}
+      {theme === "light" ? <Moon /> : <Sun />}
     </button>
   );
 }
