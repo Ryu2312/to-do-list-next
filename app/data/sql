@@ -1,0 +1,29 @@
+-- Create the 'users' table
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL
+);
+
+-- Insert sample users
+INSERT INTO users (username, password) VALUES
+('john_doe', 'password123'),
+('jane_smith', 'securepassword'),
+('alice_jones', 'mypassword');
+
+-- Create the 'tasks' table
+CREATE TABLE tasks (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    body TEXT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- Insert sample tasks
+INSERT INTO tasks (user_id, body, created_at) VALUES
+(1, 'Buy groceries', NOW()),
+(2, 'Finish homework', NOW()),
+(3, 'Plan vacation', NOW()),
+(1, 'Clean the house', NOW()),
+(2, 'Call the dentist', NOW());

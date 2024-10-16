@@ -17,7 +17,7 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="container mx-auto p-8">
+    <main className="container mx-auto w-full h-svh p-8">
       <h1 className="text-4xl font-bold">Iniciar Sesión</h1>
       <form onSubmit={handleSubmit} className="mt-4">
         <input
